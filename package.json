@@ -1,0 +1,43 @@
+{
+  "name": "k8s-sqs-autoscaler",
+  "version": "0.0.1",
+  "description": "A simple app which autoscales a k8s deployment based on an AWS SQS size",
+  "main": "dist/index.js",
+  "scripts": {
+    "prebuild": "npm run lint",
+    "build": "tsc",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint-fix": "tslint -c tslint.json -p tsconfig.json --fix",
+    "prepare": "npm run build",
+    "test": "mocha './test/**/*.spec.js' --require ts-node/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briankopp/k8s-sqs-autoscaler.git"
+  },
+  "keywords": [
+    "kubernetes",
+    "aws",
+    "sqs",
+    "replicas"
+  ],
+  "author": "brian kopp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/briankopp/k8s-sqs-autoscaler/issues"
+  },
+  "homepage": "https://github.com/briankopp/k8s-sqs-autoscaler#readme",
+  "devDependencies": {
+    "@types/debug": "^4.1.5",
+    "@types/express": "^4.17.1",
+    "@types/node": "^12.7.12",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.548.0",
+    "express": "^4.17.1",
+    "prom-client": "^11.5.3"
+  }
+}
